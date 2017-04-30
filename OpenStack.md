@@ -38,3 +38,8 @@ EXCLUDE_SERVERS=<already-configured-serverIP>,...
 ```
 packstack --answer-file=~/packstack-answers-YYYYMMDD-hhmmss.txt
 ```
+
+## If install failed...
+* Check log files
+  * `/var/tmp/packstack/latest/openstack-setup.log`
+  * `/var/tmp/packstack/<hashID?>/manifests/<Host>_compute.pp.running`
