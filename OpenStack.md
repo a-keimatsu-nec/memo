@@ -1,4 +1,4 @@
-# Openstack
+# OpenStack
 ## Initialize
 * Machine Spec of Main Controller
   * RAM: Over 8GB
