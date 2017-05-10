@@ -47,5 +47,9 @@ packstack --answer-file=~/packstack-answers-YYYYMMDD-hhmmss.txt
   * Glance needs internet access to get cirros image. Glance installation fails using proxy, and I don't know how to set proxy for getting cirros image. So, build web server and put images ( pre-downloaded manually ).
   * Set below options when packstack executes.
 ```
---provision-image-url=http://SERVER/path/to/cirros-0.3.4-x86_64-disk.img --provision-uec-kernel-url=http://SERVER/path/to/cirros-0.3.4-x86_64-kernel --provision-uec-ramdisk-url=http://SERVER/path/to/cirros-0.3.4-x86_64-initramfs --provision-uec-disk-url=http://SERVER/path/to/cirros-0.3.4-x86_64-disk.img
+packstack --allinone \
+--provision-image-url=http://SERVER/path/to/cirros-0.3.4-x86_64-disk.img \
+--provision-uec-kernel-url=http://SERVER/path/to/cirros-0.3.4-x86_64-kernel \
+--provision-uec-ramdisk-url=http://SERVER/path/to/cirros-0.3.4-x86_64-initramfs \
+--provision-uec-disk-url=http://SERVER/path/to/cirros-0.3.4-x86_64-disk.img
 ```
