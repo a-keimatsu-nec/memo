@@ -39,7 +39,13 @@ EXCLUDE_SERVERS=<already-configured-serverIP>,...
 packstack --answer-file=~/packstack-answers-YYYYMMDD-hhmmss.txt
 ```
 
-## If install failed...
+## If install fails...
 * Check log files
   * `/var/tmp/packstack/latest/openstack-setup.log`
   * `/var/tmp/packstack/<hashID?>/manifests/<Host>_compute.pp.running`
+* If the error "network is unreachable" shows in Glance installation"...
+  * Glance needs internet access to get cirros image. Glance installation fails using proxy, and I don't know how to set proxy for getting cirros image. So, build web server and put images ( pre-downloaded manually ).
+  * Set below options when packstack executes.
+```
+--provision-image-url=http://SERVER/path/to/cirros-0.3.4-x86_64-disk.img --provision-uec-kernel-url=http://SERVER/path/to/cirros-0.3.4-x86_64-kernel --provision-uec-ramdisk-url=http://SERVER/path/to/cirros-0.3.4-x86_64-initramfs --provision-uec-disk-url=http://SERVER/path/to/cirros-0.3.4-x86_64-disk.img
+```
